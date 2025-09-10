@@ -2,6 +2,8 @@
 ## Overview
 This repository contains Jupyter notebooks for predicting stock returns using Long Short-Term Memory (LSTM) neural networks, built with PyTorch and scikit-learn. The project evolved from an initial naive implementation focused on Tesla (TSLA) stock data to a more sophisticated approach using Johnson & Johnson (JNJ) stock data. The goal is to explore time series forecasting for financial data, incorporating advanced feature engineering and modeling techniques.
 
+Unfortunately, The LSTM model exhibits classic mean reversion behavior, since it predicts values clustered around zero rather than capturing the extreme volatility events that define financial markets. The model systematically underestimates the magnitude of both positive and negative returns, completely missing the sharp jumps that represent the most financially significant periods. The models behaviour minimizes prediction error by avoiding large predictions so they fail to capture the tail events that drive actual portfolio performance.
+
 ## Key Improvements
 From TSLA to JNJ: A More Refined Approach
 In the original TSLA implementation, I naively treated stock prices as directly predictable targets using a standard LSTM on raw closing prices and basic technical indicators (e.g., RSI, MACD, SMAs). This approach overlooked the non-stationary nature of financial time series, leading to potential overfitting and poor generalization. The model scaled features with MinMaxScaler and used a simple sequence-to-one prediction, but it didn't account for stationarity, cyclical patterns, or advanced input formatting, resulting in suboptimal performance (e.g., high mean squared errors and visual discrepancies in predictions).
@@ -30,5 +32,6 @@ PyTorch implementation allows finer control over optimization (Adam optimizer, M
 Evaluation: Metrics include MSE, MAE, and visualizations of predictions vs. actuals. Inverse transformation back to prices for interpretability.
 
 **These changes make the model more adaptable to financial noise and non-stationarity, though my model did not perform well, this is expected given that stock prediction remains an ongoing challenge and we did not include any aggregate news data nor approached this from a DRL perspective (which will be my next project).** 
+
 
 <img width="1003" height="485" alt="Screenshot 2025-09-10 at 3 24 44 PM" src="https://github.com/user-attachments/assets/c99eee95-152f-452b-8b8f-1fcf1b1826ec" />
