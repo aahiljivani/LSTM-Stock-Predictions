@@ -1,6 +1,6 @@
 # LSTM Stock Predictions
 ## Overview
-This repository contains Jupyter notebooks for predicting stock prices using Long Short-Term Memory (LSTM) neural networks, built with PyTorch and scikit-learn. The project evolved from an initial naive implementation focused on Tesla (TSLA) stock data to a more sophisticated approach using Johnson & Johnson (JNJ) stock data. The goal is to explore time series forecasting for financial data, incorporating advanced feature engineering and modeling techniques.
+This repository contains Jupyter notebooks for predicting stock returns using Long Short-Term Memory (LSTM) neural networks, built with PyTorch and scikit-learn. The project evolved from an initial naive implementation focused on Tesla (TSLA) stock data to a more sophisticated approach using Johnson & Johnson (JNJ) stock data. The goal is to explore time series forecasting for financial data, incorporating advanced feature engineering and modeling techniques.
 The initial TSLA model (in LSTM_TSLA.ipynb) relied on basic technical indicators from a pre-processed CSV dataset generated via DataExtraction.ipynb. This served as a proof-of-concept but highlighted limitations in handling non-stationary data and simplistic feature sets. The updated JNJ model (in JNJ_Stock_Prediction_LSTM.ipynb) addresses these shortcomings, demonstrating iterative improvements in methodology.
 ## Key Improvements
 From TSLA to JNJ: A More Refined Approach
